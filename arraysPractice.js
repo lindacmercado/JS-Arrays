@@ -61,14 +61,25 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
  function evenFinder(nums) {
     var evenNums = [];
-    for (var i = 0; i < nums.length; i++) {
+    for (var i = 0; i < nums.length; i++) {         //iterate backwards from end
       if (nums[i] % 2 === 0) {
-        //nums.splice(i, 1);
         evenNums.push(nums[i]);
       }
     }
     return evenNums;
   }
+  
+//   option2: 
+//    function evenFinder(nums) {
+//     var evenNums = [];
+//     for (var i = 0; i < nums.length; i++) {         //iterate backwards from end
+//       if (nums[i] % 2 === 0) {
+//         //nums.splice(i, 1);
+//         i--;
+//       }
+//     }
+//     return evenNums;
+//   }
 
 
 //Next problem
@@ -146,9 +157,9 @@ function reverse(str) {
 */
 var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
- function removeItem(myGroceryList, itemToRemove) {
+ function removeItem(myGroceryList, itemToRemove) {     //spec was written incorrectly
     var item = myGroceryList.indexOf(itemToRemove);
-    if (item !== -1) {
+    if (item !== -1) { //(item >= 0)
         myGroceryList.splice(item, 1);
     }
     return myGroceryList;
@@ -160,6 +171,16 @@ function addItem(myGroceryList, itemToAdd) {
     return myGroceryList;
 }
 
+// in class option:
+
+// function removeItem(list, item) {
+//     for (var i = 0; i < list.length; i++) {
+//         if (item === list[i]) {
+            // list.splice(i, 1);
+            // }
+//     }
+//     return list;
+// }
 
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
@@ -180,8 +201,6 @@ function maker() {
     }
     return arr;
 }
-
-maker();
 
 //Next Problem
 
